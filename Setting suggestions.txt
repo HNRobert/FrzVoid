@@ -1,0 +1,7 @@
+Copy the whole line and paste it in FrzVoid's entry
+
+For schools:
+DFStd.exe|DFEnt.exe|install.exe|Freeze|Deep|冰点|还原|精灵|360|安全卫士|电脑管家|鲁大师|wps.exe
+
+For parents:
+steamwebhelper.exe|msedge.exe|chrome.exe
