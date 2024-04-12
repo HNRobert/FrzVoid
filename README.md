@@ -1,6 +1,8 @@
 # FrzVoid
 A Windows app enabling you to prevent specific programmes from running
 
+![Screenshot 2024-04-12 123919](https://github.com/HNRobert/FrzVoid/assets/120773486/4f33a369-8ebc-4f99-97a2-377f82400343)
+
 ## Instructions
 
 If this is running, it continuously prevents some pieces of software from running for more than 1 sec since it's started.
