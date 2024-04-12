@@ -11,6 +11,8 @@ You can add some apps-to-kill through editing the names of their .exe files in t
 
 You can also start it upon Windows startup.
 
+> Warning: **Better NOT include a too-short word or even one characher in the target options**, for example, entering an 'e' and applying it would stop "explorer.exe" (actually all the .exes) from working, and then you know what would happen next.
+
 ## Furthermore...
 
 Using this, you can prevent your naughty kids from installing any weird app or game on your beloved PC
