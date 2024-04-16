@@ -1,7 +1,7 @@
 # FrzVoid
 A Windows app enabling you to prevent specific programmes from running
 
-![Screenshot 2024-04-12 123919](https://github.com/HNRobert/FrzVoid/assets/120773486/4f33a369-8ebc-4f99-97a2-377f82400343)
+![Screenshot 2024-04-16 211237](https://github.com/HNRobert/FrzVoid/assets/120773486/11d7b342-3629-4adf-906b-b4ed8a767af1)
 
 ## Instructions
 
@@ -11,7 +11,7 @@ You can add some apps-to-kill through editing the names of their .exe files in t
 
 It also supports identifying the previously blocked apps even if their names are changed, and that's the "Banned apps tracking" function.
 
-Through checking or unchecking the specific apps' first detected routes in the menu, you can decide which apps to track.
+Through checking or unchecking the specific apps' firstly detected routes in the menu, you can decide which apps to track.
 
 You can also start it upon Windows startup.
 
