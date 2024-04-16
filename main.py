@@ -212,7 +212,8 @@ def mk_ui(hide_root):
     close_btn.grid(row=3, column=0, padx=10, ipadx=5, pady=5, sticky='NSEW')
     save_btn = ttk.Button(root, text='Save & Apply', command=save_data)
     save_btn.grid(row=3, column=1, padx=10, ipadx=25, pady=5, sticky='NSEW')
-    root.bind('<Return>', save_data)
+    root.bind_all('<Return>', lambda event: save_data())
+    root.bind_all('<Control-s>', lambda event: save_data())
     root.grid_columnconfigure(1, weight=1, minsize=200)
 
     main_menu = Menu(root)
