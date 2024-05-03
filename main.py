@@ -1,8 +1,8 @@
-import base64
 import os
 import sys
 import time
 import tkinter.font as tk_font
+from base64 import b64decode
 from configparser import ConfigParser
 from hashlib import md5
 from tkinter import ttk, Tk, Menu, BooleanVar
@@ -32,18 +32,20 @@ class CheckFVProgress:
     def proc_root_on(self):
         # print(GetWindowText(hwnd))
         # PostMessage(hwnd, win32con.WM_CLOSE, 0, 0)
-        if self.hwnd:
+        if self.hwnd and not is_startup():
             try:
                 ShowWindow(self.hwnd, 5)
                 return True
             except Exception as e:
                 print(e)
                 return False
+        elif self.hwnd:  # Is running, but on startup, then don't show its window
+            return True
         return False
 
 
 def turn_schedule(state: bool, result_var: BooleanVar):
-    add_scd_cmd = f'schtasks /create /tn FrzVoidStartup /tr "{sys.argv[0]} --startup_visit" /sc ONLOGON /rl highest /f'
+    add_scd_cmd = f'schtasks /create /tn FrzVoidStartup /tr "\\"{sys.argv[0]}\\" \\"--startup_visit\\"" /sc ONLOGON /rl highest /f'
     del_sch_cmd = f'schtasks /delete /tn FrzVoidStartup /f'
     cmd = add_scd_cmd if state else del_sch_cmd
     p = Popen(cmd, stdin=PIPE, creationflags=CREATE_NO_WINDOW)
@@ -57,7 +59,7 @@ def get_startup_state():
 
 
 def is_startup():
-    if "--startup_visit" in sys.argv or "--wpd" in sys.argv:
+    if "--startup_visit" in sys.argv:
         return True
     return False
 
@@ -239,7 +241,7 @@ def main():
         write_data(DEFAULT_VOID)
     if not os.path.exists(FRZ_ICON):
         with open(FRZ_ICON, 'wb') as f:
-            f.write(base64.b64decode(nmico_data))
+            f.write(b64decode(nmico_data))
     if not os.path.exists(FRZ_REC_DICT):
         with open(FRZ_REC_DICT, 'w') as f:
             f.write("")
